@@ -8,10 +8,10 @@ async function extraerPeliculas(url) {
 	const res = await fetch(url)
 	const data = await res.json()
 	const pelicula = data.results;
-	mostrarPekiculas(pelicula);	
+	mostrarPeliculas(pelicula);	
 }
 
-function mostrarPekiculas(movies) {
+function mostrarPeliculas(movies) {
 	main.innerHTML = ''
 	movies.forEach((movie) => {		
 		
