@@ -40,7 +40,7 @@ function cartelearPelicula (peliculas) {
     peliculas.forEach((pelicula,i)=> {
         const {adult, backdrop_path, genre_ids, id, original_language, original_title, overview, popularity, poster_path, release_date, title, video, vote_average, vote_count} = pelicula
         const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-        if(i<8){
+        if(i>8){
         const peliculaElegida = document.createElement('div')
         peliculaElegida.classList.add('pelicula')
             peliculaElegida.innerHTML = `
@@ -55,10 +55,6 @@ function cartelearPelicula (peliculas) {
                     </div>
                 </div>`
         main.appendChild(peliculaElegida);
-        peliculaElegida.addEventListener("click", () =>{
-            window.location.href = "../SacarEntrada/sacarEntrada.html?"+JSON.stringify(pelicula);
-            //console.log(JSON.stringify(pelicula));
-        });
             i +=1;
             }
         }

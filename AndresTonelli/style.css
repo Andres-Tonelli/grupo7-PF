@@ -2,13 +2,17 @@
     font-family: autodex;
     src: url(./recourses/Fonts/Autodex.otf);
   }
+@font-face {
+    font-family: comicNeue;
+    src: url(./recourses/Fonts/ComicNeue-Italic.ttf);
+}
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family:comicNeue ;
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -74,7 +78,7 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 1rem;
 }
 
@@ -119,8 +123,8 @@ footer{
 }
 
 .mapa{
-    height: 10rem;
-    width: 10rem;
+    height: 6rem;
+    width: 15rem;
 }
 
 .socialMediaItem{
@@ -214,9 +218,16 @@ footer{
     height: 90%;
 }
 
+.selectorContainer{
+    display: flex;
+}
+
+.selector{
+    width: 80%;
+}
+
 .imgPelSE{
-    height: 100%;
-    width: 10%;
+    width: 20%;
     margin: 1rem;
     border-radius: 0.5rem;
 }
@@ -231,11 +242,106 @@ footer{
 }
 
 .funcion{
-    border: 1px solid violet;
+    border: 2px solid rgba(255, 255, 255, 0.356);
     width: 20%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.356);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
 }
 
 .funcion:hover {
     cursor: pointer;
-    color: goldenrod;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255);
+}
+
+.activo{
+    color: rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255);
+}
+
+.selector{
+    display: flex;
+    justify-content: center;
+    -align-items: flex-start ;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+#dias, #horarios{
+
+    display: flex;
+}
+
+#cantEntradas label{
+    margin-left: 2rem;
+    text-decoration: underline;
+}
+
+input{
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    margin: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: comicNeue;
+    height: 2rem;
+    width: 3rem;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.carrusel{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.carruselImg{
+    border-radius: 3rem;
+}
+
+.overimg{
+    color: transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding:1.3rem;
+    text-align: center;
+}
+
+.sig{
+    margin-left: -3.2rem;
+    background-image: url(../AndresTonelli/recourses/icons8-next-page.gif);
+}
+.pre{
+    margin-right: -3.2rem;
+    background-image: url(../AndresTonelli/recourses/icons8-back-page.gif);
+    position:relative;
+    z-index: 1;
+}
+.items{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.items li{
+    margin: auto;
+    margin-top: -3rem;
+    text-align: center;
+}
+
+::marker{
+    color: rgba(0, 0, 0, 0.637);
+    font-size: 3rem;
+}
+
+.focus::marker{
+    color: rgb(0, 0, 0);
+}
+.detalles{
+padding-left: 1rem;
 }
