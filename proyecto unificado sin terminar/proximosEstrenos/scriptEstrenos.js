@@ -24,7 +24,7 @@
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?api_key=ea27c41cbd532d19174d71429927e158&language=en-US&sort_by=popularity.desc&page=1'
 
-const main = document.querySelector('.main')
+const main = document.querySelector('.estreno')
 
 const peliculas = extraerPeliculas(API_URL)
 
@@ -40,29 +40,27 @@ function cartelearPelicula (peliculas) {
     peliculas.forEach((pelicula)=> {
         const {adult, backdrop_path, genre_ids, id, original_language, original_title, overview, popularity, poster_path, release_date, title, video, vote_average, vote_count} = pelicula
         const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-        if(id==76600 || id==677179
-            || id==603692
-            || id==804150
-            || id==315162
-            || id==980078){
+        if(id==816904
+		|| id==1023313
+        || id==502356){
         const peliculaElegida = document.createElement('div')
-        peliculaElegida.classList.add('pelicula')
+        peliculaElegida.classList.add('peliculaEstreno')
             peliculaElegida.innerHTML = `
                 <img src="${IMG_PATH + poster_path}" alt="${title}">
-                <div class="peliculaInfo">
-                    <h3>${title}</h3>
-                </div>
-                <div class="overview">
+                <article>
+                    <div class="peliculaInfoEstreno">
+                        <h3>${title}</h3>
+                    </div>
+                    <div class="overviewEstreno">
                         <h4>Overview</h4>
                         ${overview}
                         <br></br>
                     </div>
-                </div>`
+                </article>
+            </div>`
         main.appendChild(peliculaElegida);
-        peliculaElegida.addEventListener("click", () =>{
-            window.location.href = "../SacarEntrada/sacarEntrada.html?"+JSON.stringify(pelicula);
-            //console.log(JSON.stringify(pelicula));
-        })
         }
     })
-};
+}
+
+
