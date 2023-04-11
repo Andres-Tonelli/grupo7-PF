@@ -32,6 +32,7 @@ async function extraerPeliculas(url) {
 	const res = await fetch(url)
 	const data = await res.json()
 	const peliculas = data.results;
+    localStorage.setItem("peliculas",JSON.stringify(peliculas));
 	cartelearPelicula(peliculas);
 }
 
@@ -56,7 +57,7 @@ function cartelearPelicula (peliculas) {
                 </div>`
         main.appendChild(peliculaElegida);
         peliculaElegida.addEventListener("click", () =>{
-            window.location.href = "../SacarEntrada/sacarEntrada.html?"+JSON.stringify(pelicula);
+            window.location.href = `../SacarEntrada/sacarEntrada.html?id=${id}`;
             //console.log(JSON.stringify(pelicula));
         });
             i +=1;

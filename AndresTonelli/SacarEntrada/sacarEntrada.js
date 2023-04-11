@@ -1,8 +1,11 @@
-var parametros = location.search;
-parametros = decodeURI(parametros);
+let parametros = location.search;
+//parametros = decodeURI(parametros);
 parametros = parametros.substring(1,parametros.length);
 
-pelicula = JSON.parse(parametros);
+const params = new URLSearchParams(parametros)
+//pelicula = JSON.parse(parametros);
+const peliculas = localStorage.getItem('peliculas')
+const pelicula = JSON.parse(peliculas).find(element => element.id ==params.get('id'));
 
 
 const main = document.querySelector('.mainContainer')
@@ -36,6 +39,7 @@ const main = document.querySelector('.mainContainer')
             dia.classList.add('activo');
             hs.innerHTML = '';
             cmb.innerHTML= '';
+            document.getElementById("btnComprar").classList.add('hidden');
             cargarHorarios();
         });
 
@@ -43,7 +47,6 @@ const main = document.querySelector('.mainContainer')
     }
 
     function cargarHorarios(){
-    
     horarios  = ["00:00", "05:00", "08:00", "10:00"];
     for (i=0;i<horarios.length;i++){
         let hora = document.createElement('div')
@@ -62,6 +65,8 @@ const main = document.querySelector('.mainContainer')
         }); 
         hs.appendChild(hora);
         }
+        console.log("desabilito porque si");
+        
     }
 
 
@@ -69,83 +74,110 @@ const main = document.querySelector('.mainContainer')
 
 function cargarcombos(){
 
-    combos = [["Combo Pelicula", "1 Balde de Pochoclo + 1 Vaso con tapa + 2 Gaseosas","$3100","combo5.jpg"],[ "Combo Premium","1 Lata Rectangular con pochoclos + 2 Gaseosas", "$4200","combo4.jpg"],["Combo Pelicula","1 Balde de Pochoclo + 1 Vaso con tapa + 2 Gaseosas","$3100","combo3.jpg"],["Combo Lata","1 Lata de Coleccion con pochoclo + 2 Gaseosas","$4100","combo2.jpg"],["Combo Mundial","1 Vaso de Argentina +1 pochoclo mediano +1 Gaseosa","$2100","combo6.jpg"]]
-    
-   let  carrusel = document.createElement('div');
+    combos = [["Combo Pelicula: Black Panther 2", "1 Balde de Pochoclo + 1 Vaso con tapa + 2 Gaseosas","$ 3100","combo5.jpg"],[ "Combo Premium","1 Lata Rectangular con pochoclos + 2 Gaseosas", "$ 4200","combo4.jpg"],["Combo Pelicula: Shazam 2","1 Balde de Pochoclo + 1 Vaso con tapa + 2 Gaseosas","$ 3100","combo3.jpg"],["Combo Lata: Shazam 2","1 Lata de Coleccion con pochoclo + 2 Gaseosas","$ 4100","combo2.jpg"],["Combo Mundial","1 Vaso de Argentina +1 pochoclo mediano +1 Gaseosa","$ 2100","combo6.jpg"]]
+    document.getElementById("btnComprar").classList.remove('hidden');
+    let  carrusel = document.createElement('div');
         carrusel.classList.add('carrusel');
         cmb.appendChild(carrusel);
+
+        let div3 = document.createElement('div');
+        div3.classList.add('detalles');
+        div3.id ="detalles";
+        cmb.appendChild(div3);
+        div3.innerHTML = '<h4 id="detCombo">Sin Combo</h4><p id="detParrafo"></p><p id="detPrecio">$ 0</p>'
+
 
     let span = document.createElement('span');
         span.classList.add('overimg');
         span.classList.add('pre');
         span.addEventListener("click", () => {cambioCombo('a')});
-
         carrusel.appendChild(span);
         span.innerText = 'a';
-
-
 
     let div2 = document.createElement('div');
         carrusel.appendChild(div2);
         carrImg = document.createElement('img');
+        carrImg.id  = "detImg";
         carrImg.classList.add('carruselImg');
-        carrImg.src = "../recourses/comboVoid.jpg"
+        carrImg.src = "../recourses/comboVoid.jpg";
         div2.appendChild(carrImg);
     let comboFocus = document.createElement('ul');
         comboFocus.classList.add('items');
-        comboFocus.id = "selectInf" 
-        comboFocus.innerHTML = '<li class="focus"></li>'
+        comboFocus.id = "selectInf" ;
+        comboFocus.innerHTML = '<li id="li-0" class="focus"></li>';
         div2.appendChild(comboFocus);
 
         span = document.createElement('span');
         span.classList.add('overimg');
         span.classList.add('sig');
-        span.addEventListener("click", () => {cambioCombo('s')});
+        span.addEventListener("click", () => {cambioCombo('s');});
         carrusel.appendChild(span);
         span.innerText = 's';
 
-    let div3 = document.createElement('div');
-        div3.classList.add('detalles');
-        div3.id ="detalles";
-        cmb.appendChild(div3);
-        div3.innerHTML = '<h4>Sin Combo</h4><p id="detParrafo"></p><p id="detPrecio">$0</p>'
-
-
+    
         inferior = document.getElementById('selectInf');
         for (let i=0;i<combos.length;i++){
             let li = document.createElement('li');
+            li.id = `li-${i+1}`;
             inferior.appendChild(li);
         }
+
+        document.createElement('div');
+
 }
 
 
-
 function cambioCombo(paso){
-let comboFocus = document.getElementById('selectInf');
-
-let lis =comboFocus.getElementsByTagName('li')
-let foc = false
-    console.log(lis);
-let posicion
-    for (let ix = 0;ix<lis.length;ix++) {
-        clist = lis.item(ix)
-        console.log(lis.classList);
-        for (let key2 in cList) {
-            if (key2=='focus'){
-                foc = true
-            }
-        }
-        if (foc){
-            posicion = key
-            break;
+    const tamanio = combos.length;
+    let liFocus = document.getElementsByClassName('focus');
+    let liId = liFocus.item(0).id;
+    liId = liId.split('-' ,2);
+    const liNumber = Number(liId[1]/*.replace('`','')*/);
+    const liMoment = document.getElementById(`li-${liNumber}`)
+    liMoment.classList.remove('focus');
+    let next;
+    if (paso == 'a'){
+        if(liNumber == 0){
+            next=tamanio;
+        }else{
+            next = liNumber-1;
         }
     }
-console.log(posicion);
 
-    // if (paso=='a' && index>0){
+    if (paso == 's'){
+        if(liNumber == tamanio){
+            next=0;
+        }else{
+            next = liNumber+1;
+        }
+    }
 
-    // }
+    const liNext =`li-${next}`;
+    const lifind = document.getElementById(liNext);
+    lifind.classList.add('focus');
 
+if (next!=0){
+    const comboNext= next-1
+    let detCombo = document.getElementById("detCombo");
+    let detParrafo = document.getElementById("detParrafo");
+    let detPrecio = document.getElementById("detPrecio");
+    let detImg = document.getElementById("detImg");
+    detCombo.innerText = combos[comboNext][0];
+    detParrafo.innerText = combos[comboNext][1];
+    detPrecio.innerText = combos[comboNext][2];
+    detImg.src = `../recourses/${combos[comboNext][3]}`;
+    }
+
+if (next == 0){
+    let detCombo = document.getElementById("detCombo");
+    let detParrafo = document.getElementById("detParrafo");
+    let detPrecio = document.getElementById("detPrecio");
+    let detImg = document.getElementById("detImg");
+    detCombo.innerText = "Sin Combo";
+    detParrafo.innerText = "";
+    detPrecio.innerText = "$ 0";
+    detImg.src = `../recourses/comboVoid.jpg`;
+}
 }
 
 
@@ -174,31 +206,3 @@ console.log(posicion);
     */
 
 /* imagen y detalle*/
-
-
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-}
