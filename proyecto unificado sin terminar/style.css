@@ -2,6 +2,10 @@
   font-family: autodex;
   src: url(./recourses/Fonts/Autodex.otf);
 }
+@font-face {
+  font-family: comicNeue;
+  src: url(./recourses/Fonts/ComicNeue-Italic.ttf);
+}
 
 * {
   box-sizing: border-box;
@@ -26,9 +30,10 @@ header{
   align-content: space-between;
   font-family: autodex;
 }
-
+margin-top
 header h1{
   color: white;
+ 
 }
 
 header div {
@@ -41,7 +46,14 @@ header div {
   align-items: center;
   font-size: 1.5rem;
 }
-
+.logo h1{
+  color: rgb(255, 255, 255, 0.5);
+  font-size: 3rem;
+  margin: auto;
+}
+.logo h1:hover{
+  color: white;
+}
 .logo:hover{
   cursor: pointer;
 }
@@ -52,13 +64,13 @@ header div {
   justify-content: space-around;
   list-style-type: none;
   width: 50vw;
+  margin-top: 1rem!important;
 }
-
 .navMenu li a{
-  color: rgba(255, 255, 255, 0.664);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-
   font-size: 1.5rem;
+
 }
 
 .navMenu li a:hover{
@@ -66,19 +78,19 @@ header div {
 }
 
 .imgLogo{
-  height: 5rem;
-  width: 20rem;
+  height: 4rem;
+  width: 3rem;
 }
 
 /*pie de pagina*/
 
 footer{
   background-color: rgb(0, 0, 0);
-  color: rgba(255, 255, 255, 0.664);
+  color: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1rem;
 }
 
@@ -106,6 +118,7 @@ footer{
 .footerLogo{
   height: 3rem;
   width: 2rem;
+  margin-bottom: 1rem;
 }
 
 .footerFirma{
@@ -123,23 +136,13 @@ footer{
 }
 
 .mapa{
-  height: 8rem;
-  width: 10rem;
+  height: 6rem;
+  width: 15rem;
 }
 
 .socialMediaItem{
   margin: auto;
 }
-
-.navFooter{
-  list-style: none;
-}
-
-.navFooter a{
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.664);
-}
-
 
 /*cartelera*/
 
@@ -159,7 +162,7 @@ footer{
 width: 20rem;
 margin: 1rem;
 background-color: rgb(0, 0, 0);
-box-shadow: 0 4px 5px rgba(8, 8, 8, 0.2);
+box-shadow: 0 4px 5px rgba(8, 8, 8, 0.5);
 position: relative;
 overflow: hidden;
 border-radius: 10px;
@@ -203,7 +206,7 @@ transform: translateY(0);
 
 .pelicula:hover{
   cursor: pointer;
-  box-shadow: 0px 0px 1.5rem rgb(255, 255, 255);
+  box-shadow: 0px 0px 1.5rem white;
 }
 
 .overview td {
@@ -229,16 +232,20 @@ transform: translateY(0);
   width: 100%;
   height: 90%;
 }
-
+.selectorContainer{
+  display: flex;
+}
 .imgPelSE{
-  height: 100%;
-  width: 10%;
+  width: 20%;
   margin: 1rem;
   border-radius: 0.5rem;
 }
 
+
 .tituloPeli{
-  margin: 1rem;
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: goldenrod;
   text-decoration-line: underline;
 }
 
@@ -247,15 +254,133 @@ transform: translateY(0);
 }
 
 .funcion{
-  border: 1px solid violet;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   width: 20%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
 }
 
 .funcion:hover {
   cursor: pointer;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgba(255, 255, 255);
+}
+.activo{
   color: goldenrod;
+  border: 2px solid goldenrod;
+  text-shadow: 0px 0px 2rem goldenrod;
 }
 
+.selector{
+  display: flex;
+  justify-content: center;
+  -align-items: flex-start ;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 80%;
+}
+#dias, #horarios{
+  display: flex;
+}
+#cantEntradas label{
+  margin-left: 2rem;
+  text-decoration: underline;
+}
+#cantEntradas input{
+  background-color: rgba(240, 248, 255, 0);
+  color: goldenrod;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: comicNeue;
+  height: 2rem;
+  width: 3rem;
+  border: none;
+  border-bottom: 2px solid white;
+}
+.combocarrusel{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.carrusel{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+.carruselImg{
+  border-radius: 3rem;
+}
+.overimg{
+  color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding:1.3rem;
+  text-align: center;
+  height: 3rem;
+  width: 3rem;
+}
+
+.sig{
+  margin-left: -3.2rem;
+  background-image: url(../AndresTonelli/recourses/icons8-next-page.gif);
+}
+.pre{
+  margin-right: -3.2rem;
+  background-image: url(../AndresTonelli/recourses/icons8-back-page.gif);
+  position:relative;
+  z-index: 1;
+}
+.items{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+.items li{
+  margin: auto;
+  margin-top: -3rem;
+  text-align: center;
+}
+
+::marker{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 2.5rem;
+}
+
+.focus::marker{
+  color: goldenrod;
+}
+.detalles{
+padding-left: 1rem;
+width: 50%;
+}
+
+.hidden{
+  display: none;
+}
+
+.btnComprar{
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.btnComprar:hover{
+  background-color: white;
+}
 /*contacto*/
 
 article {
