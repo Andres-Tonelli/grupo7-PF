@@ -618,3 +618,23 @@ input.invalid {
     color: goldenrod;
   }
 
+/*Nosotros*/
+#nosotros section{  
+  width: 80%;
+  background-color: black;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 10px;
+  color: grey;
+  box-shadow: 0px 0px 1.5rem rgb(255, 255, 255); 
+  padding: 5px; 
+}
+
+.nosotrosContainer{  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;
+  padding: 25px; 
+  gap: 30px; 
+  padding-bottom: 25px;
+}
