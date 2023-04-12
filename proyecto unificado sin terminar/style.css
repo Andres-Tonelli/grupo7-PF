@@ -332,11 +332,11 @@ transform: translateY(0);
 
 .sig{
   margin-left: -3.2rem;
-  background-image: url(../AndresTonelli/recourses/icons8-next-page.gif);
+  background-image: url(./recourses/icons8-next-page.gif);
 }
 .pre{
   margin-right: -3.2rem;
-  background-image: url(../AndresTonelli/recourses/icons8-back-page.gif);
+  background-image: url(./recourses/icons8-back-page.gif);
   position:relative;
   z-index: 1;
 }
