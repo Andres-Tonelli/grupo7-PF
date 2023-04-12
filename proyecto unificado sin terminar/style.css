@@ -29,6 +29,7 @@ header{
   align-items: center;
   align-content: space-between;
   font-family: autodex;
+  border: solid 2px rgba(255, 255, 255, 0.5);
 }
 margin-top
 header h1{
@@ -92,6 +93,7 @@ footer{
   flex-wrap: nowrap;
   justify-content: space-evenly;
   padding: 1rem;
+  border: solid 2px rgba(255, 255, 255, 0.5);
 }
 
 .socialMediaList{
@@ -137,7 +139,7 @@ footer{
 
 .mapa{
   height: 6rem;
-  width: 15rem;
+  width: 12rem;
 }
 
 .socialMediaItem{
