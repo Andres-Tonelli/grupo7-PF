@@ -384,13 +384,14 @@ width: 50%;
 /*contacto*/
 
 .contact {
-  padding-bottom: 5rem;
+  padding-bottom: 10px;
 }
 
 .contact .row {
   
   display:flex;
-  margin-top: 30px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .contact .row form {
@@ -398,8 +399,8 @@ width: 50%;
 }
 
 .contact .row form .box {
-  padding: 2rem 0;
-  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1.6rem;
   border-bottom: 0.2rem solid #444;
   width: 100%;
@@ -410,7 +411,7 @@ width: 50%;
 }
 
 .contact .row form textarea {
-  height: 15rem;
+  height: 10rem;
   resize: none;
 }
 
@@ -419,7 +420,7 @@ width: 50%;
 }
 
 .contact .row .contact-info h3 {
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
   font-size: 3rem;
   color: #444;
   text-transform: capitalize;
@@ -433,7 +434,7 @@ width: 50%;
 }
 
 .contact .row .contact-info .icons {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -464,7 +465,9 @@ width: 50%;
 }
 
 .contact .row .contact-info .share {
-  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
 }
 
 .contact .row .contact-info .share a {
@@ -502,9 +505,11 @@ textarea {
   margin-bottom: 10px;
 }
 
-textarea {
-  height: 150px;
+#textarea{
+  height: 250px;
 }
+
+
 
 input[type="submit"] {
   background-color: #4CAF50;
