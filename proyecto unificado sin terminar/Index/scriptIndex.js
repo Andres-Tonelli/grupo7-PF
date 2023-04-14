@@ -1,10 +1,7 @@
-import Swal from 'sweetalert2';
 $("#botonSacarEntrada").click(function() {
-    // Muestra un mensaje de SweetAlert
     Swal.fire({
-        title: '¡Elige con sabiduría!',
-        icon: 'info',
-        confirmButtonText: 'Aceptar',
+      title: '¡Elige con sabiduría!'
+    }).then((result) => {
+        window.location.href = '../Cartelera/cartelera.html';
     });
-    window.location.href = '../Cartelera/cartelera.html';
-});
+  });
