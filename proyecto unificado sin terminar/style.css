@@ -555,7 +555,7 @@ input[type="submit"]:hover {
   border-radius: 10px;
   color: grey;
   box-shadow: 0px 0px 1.5rem rgb(255, 255, 255); 
-  padding: 5px; 
+  padding: 20px; 
 }
 
 .carousel-inner img{
@@ -567,7 +567,7 @@ input[type="submit"]:hover {
 #tienda{
   width: 450px;
   height: 200px;
-  padding: 10px;
+  padding: 20px;
   border: solid grey 2px;
 }
 
