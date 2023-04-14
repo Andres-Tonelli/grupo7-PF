@@ -221,29 +221,3 @@ function pdfCompra(){
     x.document.write(iframe);
     x.document.close();
 }
-
-
-
-    /*                      <div class="carrusel">
-                                <div >
-                                    <span class="overimg pre">a</span>
-                                </div>
-                                <div>
-                                    <img class="carruselImg" src="../recourses/combo2.jpg" alt="">
-                                    <ul class="items">
-                                        <li class="focus"></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <span class="overimg sig">s</span>
-                                </div>
-                            </div>
-                            <div id="detalles" class="detalles">
-                                <h4>Detalles</h4>
-                                <p>>Precio: $3100<br>1 Balde de Pochoclo<br>+ 1 Vaso con tapa<br>+ 2 Gaseosas</p>
-                            </div>
-    */
-
-/* imagen y detalle*/

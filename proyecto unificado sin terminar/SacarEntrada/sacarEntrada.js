@@ -32,9 +32,9 @@ const main = document.querySelector('.mainContainer')
         dia.innerHTML = dias[i];
         
         dia.addEventListener("click", () =>{
-            let algo = ds.getElementsByClassName('dia activo');
-            for(let i=0;i<algo.length;i++){
-                algo.item(i).classList.remove('activo');
+            let diaActivo = ds.getElementsByClassName('dia activo');
+            for(let i=0;i<diaActivo.length;i++){
+                diaActivo.item(i).classList.remove('activo');
             }
             dia.classList.add('activo');
             hs.innerHTML = '';
@@ -55,9 +55,9 @@ const main = document.querySelector('.mainContainer')
         hora.innerHTML = horarios[i];
         
         hora.addEventListener("click", () =>{
-        let algo = hs.getElementsByClassName('horario activo');
-            for(let i=0;i<algo.length;i++){
-                algo.item(i).classList.remove('activo');
+            let horaActiva = hs.getElementsByClassName('horario activo');
+            for(let i=0;i<horaActiva.length;i++){
+                horaActiva.item(i).classList.remove('activo');
             }
             hora.classList.add('activo')
             cmb.innerHTML= ''
@@ -178,31 +178,46 @@ if (next == 0){
     detPrecio.innerText = "$ 0";
     detImg.src = `../recourses/comboVoid.jpg`;
 }
+
+btnComprar.addEventListener('click', () => {pdfCompra()});
+
 }
 
-
-
-
-    /*                      <div class="carrusel">
-                                <div >
-                                    <span class="overimg pre">a</span>
-                                </div>
-                                <div>
-                                    <img class="carruselImg" src="../recourses/combo2.jpg" alt="">
-                                    <ul class="items">
-                                        <li class="focus"></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <span class="overimg sig">s</span>
-                                </div>
-                            </div>
-                            <div id="detalles" class="detalles">
-                                <h4>Detalles</h4>
-                                <p>>Precio: $3100<br>1 Balde de Pochoclo<br>+ 1 Vaso con tapa<br>+ 2 Gaseosas</p>
-                            </div>
-    */
-
-/* imagen y detalle*/
+function pdfCompra(){
+    let dia;
+    let diaActivo = ds.getElementsByClassName('dia activo');
+    for(let i=0;i<diaActivo.length;i++){
+        dia = diaActivo.item(i).innerText;
+    }
+    let película = TitPelicula.innerText;
+    let horario;
+    let horaActiva = hs.getElementsByClassName('horario activo');
+                for(let i=0;i<horaActiva.length;i++){
+                    horario = horaActiva.item(i).innerText;
+                }
+    let tituloCombo = document.getElementById("detCombo").innerText;
+    let detCombo = document.getElementById("detParrafo").innerText;
+    let cantEntradas = document.getElementById("cantEntradas").innerText;
+    
+    let  doc = new jsPDF();
+    doc.text(`                                              Cine Grupo 7
+    
+    Compra realizada para la funció n de ${película} en el ${dia} 
+    en hora ${horario}.
+    
+    Detalle de elementos: 
+    -	Entradas: ${cantEntradas}
+    -	Combo: ${tituloCombo}
+                    - ${detCombo}
+    
+    
+    Gracias por su compra. ¡Lo esperamos!`
+    , 10, 10);
+    
+    let pdfContent = doc.output('datauristring');
+    var iframe = "<iframe width='100%' height='100%' src='" + pdfContent + "'></iframe>"
+    var x = window.open();
+    x.document.open();
+    x.document.write(iframe);
+    x.document.close();
+}
