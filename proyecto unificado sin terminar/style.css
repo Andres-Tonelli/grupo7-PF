@@ -653,11 +653,11 @@ input[type="submit"]:hover {
 #nosotros section{  
   width: 80%;
   background-color: black;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   border-radius: 10px;
   color: grey;
-  box-shadow: 0px 0px 1.5rem rgb(255, 255, 255); 
+  box-shadow: 0px 0px 1.5rem rgb(241, 225, 6); 
   padding: 5px; 
 }
 
@@ -665,7 +665,13 @@ input[type="submit"]:hover {
   display: flex;  
   flex-direction: column;  
   align-items: center;
-  padding: 25px; 
+  padding: 30px; 
   gap: 30px; 
   padding-bottom: 25px;
+}
+
+#parrafo {
+  color: yellow;
+  font-family: Arial;
+
 }
