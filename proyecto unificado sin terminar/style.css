@@ -390,8 +390,7 @@ width: 50%;
 }
 
 .contact .row {
-  
-  display:flex;
+
   margin-top: 10px;
   width: 100%;
 }
@@ -422,7 +421,6 @@ width: 50%;
 }
 
 .contact .row .contact-info h3 {
-  padding-bottom: 0rem;
   font-size: 3rem;
   color: #444;
   text-transform: capitalize;
@@ -437,14 +435,9 @@ width: 50%;
 
 .contact .row .contact-info .icons {
   padding: 1rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 1.5rem;
- 
 }
 
 .contact .row .contact-info .icons i {
@@ -462,7 +455,6 @@ width: 50%;
   font-size: 1.5rem;
   color: #666;
   line-height: 2;
-  padding: 1rem 0;
   padding: 0;
 }
 
@@ -482,6 +474,7 @@ width: 50%;
 .contact .row .contact-info .share a:hover {
   color: #2d47ed;
 }
+
 
 form {
   max-width: 500px;
@@ -531,6 +524,122 @@ input[type="submit"]:hover {
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
+}
+form,
+.contact-info {
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+border-radius: 5px;
+margin: 50px 10px;
+}
+
+form {
+background-color: #f2f2f2;
+margin: 50px 10px;
+margin-left: 60px;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+width: 100%;
+padding: 10px;
+border: none;
+border-radius: 3px;
+margin-bottom: 10px;
+}
+
+#textarea {
+height: 250px;
+}
+
+input[type="submit"] {
+background-color: #4CAF50;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #3e8e41;
+}
+
+.step {
+display: none;
+}
+
+.step:first-child {
+display: block;
+}
+
+h2 {
+font-size: 24px;
+margin: auto;
+text-align: center;
+}
+
+input[type="checkbox"] {
+margin-right: 10px;
+}
+
+button {
+display: inline-block;
+padding: 10px 20px;
+border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #28a745;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #28a745;
+}
+
+#prevBtn {
+  display: none;
+}
+
+#submitBtn {
+  background-color: #28a745;
+  
+}
+
+#submitBtn:hover {
+  background-color: #28a745;
+}
+
+#review-generos li {
+  margin-bottom: 5px;
+}
+
+
+
+div.cajaFormu{
+  display: flex;
+  flex-direction: column;
+width: 50%;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin: 10px 20%;
+  margin-left: 25%;
+}
+
+
+#signup-form{
+width: 100%;
+margin: auto;
 }
 /*index*/
 
